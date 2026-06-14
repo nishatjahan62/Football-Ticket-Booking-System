@@ -20,5 +20,9 @@ inner join matches on bookings.match_id = matches.match_id
 -- Query 5:
 select users.user_id, full_name,booking_id from users
 left join bookings on users.user_id = bookings.user_id
--- Query 6: 
 
+-- Query 6: 
+select booking_id,	match_id,	total_cost::integer from bookings 
+where total_cost > (
+  select avg(total_cost) from bookings
+)
