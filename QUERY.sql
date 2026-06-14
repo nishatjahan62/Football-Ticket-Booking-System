@@ -18,6 +18,7 @@ inner join users on bookings.user_id = users.user_id
 inner join matches on bookings.match_id = matches.match_id
 
 -- Query 5:
-
+select users.user_id, full_name,booking_id from users
+left join bookings on users.user_id = bookings.user_id
 -- Query 6: 
 
